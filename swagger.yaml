@@ -1,0 +1,94 @@
+
+---
+swagger: "2.0"
+info:
+  description: "This is a sample service"
+  version: "1.0.0"
+  title: "Sample Store"
+  contact:
+    email: "drepin@hotmail.com"
+basePath: "/v1"
+tags:
+- name: "Maintenance"
+  description: "Service maintenance API"
+schemes:
+- "http"
+paths:
+  /healthz:
+    get:
+      tags:
+      - "Maintenance"
+      summary: "Health check"
+      description: "Always returns 200"
+      operationId: "get_healthz"
+      produces:
+      - "text/plain"
+      parameters: []
+      responses:
+        200:
+          description: "Returns 200s"
+          schema:
+            type: "string"
+            default: "OK"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
+  /status:
+    get:
+      tags:
+      - "Maintenance"
+      summary: "Returns the server status"
+      description: ""
+      operationId: "get_status"
+      produces:
+      - "text/plain"
+      parameters: []
+      responses:
+        200:
+          description: "Server status"
+          schema:
+            type: "string"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
+  /busy/{duration}:
+    put:
+      tags:
+      - "Maintenance"
+      summary: "Performs a high-CPU-usage request that is processed for 'duration'\
+        \ of seconds"
+      description: ""
+      operationId: "put_busy"
+      produces:
+      - "text/plain"
+      parameters:
+      - name: "duration"
+        in: "path"
+        description: "The request processing duration (seconds)."
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Always returnds 200"
+          schema:
+            type: "string"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
+  /wait/{duration}:
+    put:
+      tags:
+      - "Maintenance"
+      summary: "Performs a request that results in a wait for 'duration' of seconds"
+      description: ""
+      operationId: "put_wait"
+      produces:
+      - "text/plain"
+      parameters:
+      - name: "duration"
+        in: "path"
+        description: "The request processing duration (seconds)."
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Always returnds 200"
+          schema:
+            type: "string"
+            default: "OK"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
+
