@@ -30,6 +30,6 @@ spec:
             value: "YES"
         readinessProbe:
           httpGet:      
-            path: /v1/status  # Make sure it is not slash terminated
+            path: /v1/healthz  # Make sure it is not slash terminated
             port: 8080
 ---

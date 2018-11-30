@@ -1,0 +1,27 @@
+{
+    "editor.autoClosingBrackets": "never",
+    "editor.detectIndentation": false,
+    "editor.minimap.enabled": false,
+    // "editor.formatOnSave": true,
+    // "editor.formatOnType": true,
+    // "editor.formatOnPaste": true,
+    // "[dockerfile]": {
+    //     "editor.formatOnSave": false,
+    // },
+    "git.enableSmartCommit": true,
+    "extensions.ignoreRecommendations": true,
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.linting.pylintArgs": [
+        "--max-line-length=120",
+        "--disable=missing-docstring",
+        "--disable=unused-variable",
+        "--disable=unused-argument",
+        "--disable=trailing-whitespace",
+        "--disable=invalid-name",
+        "--disable=wrong-import-order",
+        "--disable=broad-except"
+    ],
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120"
+    ]
+}

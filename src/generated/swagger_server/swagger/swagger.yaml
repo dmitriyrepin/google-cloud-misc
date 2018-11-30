@@ -1,3 +1,4 @@
+---
 swagger: "2.0"
 info:
   description: "This is a sample web service"
@@ -30,6 +31,7 @@ paths:
           schema:
             type: "string"
             default: "OK"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
   /status:
     get:
       tags:
@@ -45,6 +47,7 @@ paths:
           description: "Server status"
           schema:
             type: "string"
+      x-swagger-router-controller: "swagger_server.controllers.maintenance_controller"
   /busy/{duration}:
     get:
       tags:
@@ -66,6 +69,7 @@ paths:
           description: "Always returnds 200"
           schema:
             type: "string"
+      x-swagger-router-controller: "swagger_server.controllers.functionality_controller"
   /wait/{duration}:
     get:
       tags:
@@ -87,4 +91,5 @@ paths:
           schema:
             type: "string"
             default: "OK"
-
+      x-swagger-router-controller: "swagger_server.controllers.functionality_controller"
+definitions: {}

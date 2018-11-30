@@ -1,0 +1,15 @@
+
+# Requirements for the hand-coded source
+google-cloud-storage
+google-auth
+google-api-python-client
+oauth2client
+jsonpickle
+httplib2
+# Requirements for the generated code
+connexion == 1.1.15
+python_dateutil == 2.6.0
+setuptools >= 21.0.0
+# Requirements for the VS Code
+pylint
+autopep8
